@@ -13,6 +13,7 @@
 
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AppContainer from "../../components/AppContainer";
 
 export default class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
@@ -24,7 +25,10 @@ export default class App extends React.PureComponent { // eslint-disable-line re
     return (
       <MuiThemeProvider>
         <div>
-          {React.Children.toArray(this.props.children)}
+          <AppContainer/>
+          <div>
+            {React.Children.toArray(this.props.children)}
+          </div>
         </div>
       </MuiThemeProvider>
     );

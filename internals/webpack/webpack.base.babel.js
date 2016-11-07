@@ -18,6 +18,9 @@ module.exports = (options) => ({
       exclude: /node_modules/,
       query: options.babelQuery,
     }, {
+      test: /\.jsx$/,
+      loader: 'jsx-loader?insertPragma=React.DOM&harmony'
+    }, {
       // Do not transform vendor's CSS with CSS-modules
       // The point is that they remain in global scope.
       // Since we require these CSS files in our JS or CSS files,
@@ -26,6 +29,10 @@ module.exports = (options) => ({
       test: /\.css$/,
       include: /node_modules/,
       loaders: ['style-loader', 'css-loader'],
+    }, {
+      test: /\.scss$/,
+      exclude: /node_modules/,
+      loaders: ['raw-loader', 'sass-loader'] // sass-loader not scss-loader
     }, {
       test: /\.(eot|svg|ttf|woff|woff2)$/,
       loader: 'file-loader',

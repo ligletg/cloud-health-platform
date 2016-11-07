@@ -11,16 +11,14 @@
 
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import RaisedButton from 'material-ui/RaisedButton';
-import messages from './messages';
+// import RaisedButton from 'material-ui/RaisedButton';
+// import messages from './messages';
+import TilesContainer from "../../components/TilesContainer";
 
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <h1>
-        <FormattedMessage {...messages.header} />
-        <RaisedButton label="Default" />
-      </h1>
+      <TilesContainer />
     );
   }
 }
